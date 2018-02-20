@@ -1,0 +1,7 @@
+<h1>Your Daily Habits</h1>
+<%= for habit <- habits do %>
+  <p><%= habit %></h2>
+<% end %>
+<code>
+<%= @name %>
+</code>

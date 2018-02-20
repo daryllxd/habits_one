@@ -20,7 +20,7 @@ use Mix.Config
 # configured to run both http and https servers on
 # different ports.
 config :habits_one, HabitsOne.Endpoint,
-  http: [port: 4000],
+  http: [port: 4001],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
@@ -49,8 +49,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :habits_one, HabitsOne.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "daryllxd",
+  password: "",
   database: "habits_one_dev",
   hostname: "localhost",
   pool_size: 10
