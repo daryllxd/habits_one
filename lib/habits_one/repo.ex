@@ -1,25 +1,3 @@
 defmodule HabitsOne.Repo do
-  @moduledoc """
-  In memory repository.
-  """
-
-  def all(HabitsOne.User) do
-    [
-      %HabitsOne.User{id: "1", name: "Daryll Santos", username: "daryllxd", password: "daryllxd"},
-      %HabitsOne.User{id: "2", name: "Jerico Santos", username: "jerico", password: "jerico"},
-      %HabitsOne.User{id: "3", name: "Justin Santos", username: "justin", password: "justin"}
-    ]
-  end
-
-  def all(_module), do: []
-
-  def get(module, id) do
-    Enum.find all(module), fn map -> map.id == id end
-  end
-
-  def get_by(module, params) do
-    Enum.find all(module), fn map ->
-      Enum.all?(params, fn {key, val} -> Map.get(map, key) == val end)
-    end
-  end
+  use Ecto.Repo, otp_app: :habits_one
 end
