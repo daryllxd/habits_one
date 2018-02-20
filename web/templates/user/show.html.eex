@@ -1,0 +1,3 @@
+<h1>User <%= first_name(@user) %></h1>
+<%= render "user.html", key: "Name: ", value: @user.name %>
+<p><strong>Username: </strong><%= @user.username %></p>
