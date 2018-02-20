@@ -1,3 +1,4 @@
 <h1>User <%= first_name(@user) %></h1>
+<%= link "All Users", to: user_path(@conn, :index) %>
 <%= render "user.html", key: "Name: ", value: @user.name %>
-<p><strong>Username: </strong><%= @user.username %></p>
+<p><strong>Email: </strong><%= @user.email %></p>

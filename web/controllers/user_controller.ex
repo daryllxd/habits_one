@@ -7,7 +7,7 @@ defmodule HabitsOne.UserController do
 
     conn
     |> put_flash(:error, "SWAG")
-    |> render "index.html", users: users
+    |> render("index.html", users: users)
   end
 
   def show(conn, %{"id" => id}) do
@@ -15,10 +15,10 @@ defmodule HabitsOne.UserController do
 
     conn
     |> put_flash(:error, "Welcome #{first_name(user)}")
-    |> render "show.html", user: user
+    |> render("show.html", user: user)
   end
 
   defp first_name(user) do
-    user.username
+    user.name
   end
 end
