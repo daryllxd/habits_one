@@ -10,6 +10,11 @@ defmodule HabitsOne.UserController do
     |> render("index.html", users: users)
   end
 
+  def new(conn, _params) do
+    changeset = User.changeset(%User{})
+    render conn, "new.html", changeset: changeset
+  end
+
   def show(conn, %{"id" => id}) do
     user = Repo.get(User, id)
 
