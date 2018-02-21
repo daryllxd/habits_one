@@ -41,7 +41,8 @@ defmodule HabitsOne.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:phoenix_slime, "~> 0.9.0"},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:credo, "~> 0.9.0-rc1", only: [:dev, :test], runtime: false}
     ]
   end
 
