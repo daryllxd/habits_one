@@ -13,6 +13,7 @@ defmodule HabitsOne.User do
   def changeset(model, params \\ :invalid) do
     model
     |> cast(params, ~w(name email), [])
+    |> validate_length(:name, min: 1, max: 20)
     |> validate_length(:email, min: 1, max: 20)
   end
 end

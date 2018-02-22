@@ -19,7 +19,7 @@ defmodule HabitsOne.Router do
     get "/hello/", HelloController, :world
     get "/hello/:name", HelloController, :world
 
-    resources "/users", UserController, only: [:index, :show, :new, :create]
+    resources "/users", UserController, only: [:index, :show, :new, :create, :delete]
     get "/", PageController, :index
   end
 

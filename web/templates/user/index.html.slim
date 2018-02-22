@@ -1,0 +1,13 @@
+h1 All Users
+table.table
+  = for user <- @users do
+    tr
+      td
+        strong= first_name(user)
+        span.ml-5= user.id
+      td
+        = link "View", to: user_path(@conn, :show, user.id)
+      td
+        = link "Delete", to: user_path(@conn, :show, user.id), method: :delete, data: [ confirm: "Really?" ]
+p
+  = link "New User", to: user_path(@conn, :new), class: "btn btn-primary"
