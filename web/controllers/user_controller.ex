@@ -1,12 +1,16 @@
 defmodule HabitsOne.UserController do
   use HabitsOne.Web, :controller
+
+  import HabitsOne.MovieData
+  plug :movie_total
+
   alias HabitsOne.User
 
   def index(conn, _params) do
     users = Repo.all(User)
 
     conn
-    |> put_flash(:error, "SWAG")
+    |> put_flash(:error, conn.assigns[:movie_total])
     |> render("index.html", users: users)
   end
 
