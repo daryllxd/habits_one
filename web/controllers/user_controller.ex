@@ -10,8 +10,6 @@ defmodule HabitsOne.UserController do
     users = Repo.all(User)
 
     conn
-    |> put_flash(:error, conn.assigns[:movie_total])
-    |> put_flash(:info, Application.get_env(:habits_one, HabitsOne.Endpoint)[:app_title])
     |> render("index.html", users: users)
   end
 
@@ -34,7 +32,19 @@ defmodule HabitsOne.UserController do
     end
   end
 
-  def delete(conn, %{"user" => user_params}) do
+  def delete(conn, %{"id" => id}) do
+    user = User.get_user(id)
+
+    case Repo.delete(user) do
+      { :ok, user } ->
+        conn
+        |> put_flash(:info, "#{user.name} deleted!")
+        |> redirect(to: user_path(conn, :index))
+      { :error, user } ->
+        conn
+        |> put_flash(:error, "Can't delete.")
+        |> redirect(to: user_path(conn, :index))
+    end
   end
 
   def show(conn, %{"id" => id}) do

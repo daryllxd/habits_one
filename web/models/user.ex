@@ -1,6 +1,9 @@
 defmodule HabitsOne.User do
   use HabitsOne.Web, :model
 
+  alias HabitsOne.Repo
+  alias HabitsOne.User
+
   schema "users" do
     field :name, :string
     field :email, :string
@@ -9,6 +12,8 @@ defmodule HabitsOne.User do
 
     timestamps()
   end
+
+  def get_user(id), do: Repo.get(User, id)
 
   def changeset(model, params \\ :invalid) do
     model
