@@ -11,6 +11,7 @@ defmodule HabitsOne.UserController do
 
     conn
     |> put_flash(:error, conn.assigns[:movie_total])
+    |> put_flash(:info, Application.get_env(:habits_one, HabitsOne.Endpoint)[:app_title])
     |> render("index.html", users: users)
   end
 

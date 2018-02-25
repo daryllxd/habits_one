@@ -12,6 +12,7 @@ config :habits_one,
 # Configures the endpoint
 config :habits_one, HabitsOne.Endpoint,
   url: [host: "localhost"],
+  app_title: "Habits One!",
   secret_key_base: "m98samAs3qN9ZwNYapd1yqcGqmn7kMeB4zMz6WalfajIiXsCOI82GplkaYwpVJZI",
   render_errors: [view: HabitsOne.ErrorView, accepts: ~w(html json)],
   pubsub: [name: HabitsOne.PubSub,
